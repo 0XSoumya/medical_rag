@@ -2,6 +2,12 @@
 
 **Medical-RAG** is an AI-powered chatbot that performs medical diagnostics by combining patient data with external medical knowledge using a Retrieval-Augmented Generation (RAG) pipeline.
 
+## 🧠 Demo
+
+### 1. Interface (Gradio)
+
+![Gradio UI](assets/front_page.png)
+
 ## 🚀 Project Overview
 
 This project aims to build a reliable, low-hallucination chatbot that can:
@@ -39,11 +45,7 @@ medical-rag/
 - ✅ Post-RAG fact-checking (planned)
 - ✅ Medical model integration (e.g. ClinicalCamel) (planned)
 
-## 🧠 Demo
 
-### 1. Interface (Gradio)
-
-![Gradio UI](assets/front_page.png)
 
 
 ## ⚙️ Getting Started
