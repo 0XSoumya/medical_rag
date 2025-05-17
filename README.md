@@ -39,6 +39,13 @@ medical-rag/
 - ✅ Post-RAG fact-checking (planned)
 - ✅ Medical model integration (e.g. ClinicalCamel) (planned)
 
+## 🧠 Demo
+
+### 1. Interface (Gradio)
+
+![Gradio UI](assets/front_page.png)
+
+
 ## ⚙️ Getting Started
 
 1. **Clone the repo**
