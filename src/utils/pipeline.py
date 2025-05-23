@@ -1,3 +1,5 @@
+#creates the pipeline for the chatbot
+
 from langchain.schema.runnable import RunnableParallel, RunnableLambda, RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 from src.retrieval.dense import format_docs
