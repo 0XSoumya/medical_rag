@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from src.data.loader import load_and_split_all_docs
-from src.data.store  import load_vector_store, create_vector_store
+from src.data.store  import load_vector_store, create_vector_store, update_vector_store
+
 
 if __name__ == "__main__":
     print("⏳ Bootstrapping KB…")

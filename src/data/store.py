@@ -15,3 +15,20 @@ def load_vector_store():
         embeddings = MistralAIEmbeddings()
         return FAISS.load_local(VECTOR_STORE_PATH, embeddings, allow_dangerous_deserialization=True)
     return None
+
+def update_vector_store(new_chunks, path: str = VECTOR_STORE_PATH):
+    """
+    Incrementally add new document chunks to an existing FAISS store,
+    or create it if it does not exist.
+    """
+    embeddings = MistralAIEmbeddings()
+    # 1. Load or create
+    if os.path.exists(path):
+        store = FAISS.load_local(path, embeddings, allow_dangerous_deserialization=True)
+        # 2. Add only new chunks
+        store.add_documents(new_chunks, embeddings=embeddings)
+    else:
+        store = FAISS.from_documents(new_chunks, embeddings)
+    # 3. Persist
+    store.save_local(path)
+    return store

@@ -1,7 +1,7 @@
 import os
 from glob import glob
 from langchain_community.document_loaders import PyPDFLoader
-from langchain.document_loaders import TextLoader
+from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 

@@ -1,11 +1,14 @@
 from src.data.store import load_vector_store
-from src.retrieval.dense import get_retriever
+from src.retrieval.fusion import get_fusion_retriever
+from src.data.loader import load_and_split_all_docs
 from src.utils.pipeline import build_chain
 import gradio as gr
 
 # 1. Load (or re-use) the vector store
-vector_store = load_vector_store()           # matches store.py
-retriever    = get_retriever(vector_store)  # matches dense.py
+vector_store = load_vector_store()
+chunks = load_and_split_all_docs("docs")
+retriever = get_fusion_retriever(vector_store, chunks, k=5, weights=(0.7, 0.3))  # adjust as needed
+
 main_chain   = build_chain(retriever)       # matches pipeline.py
 
 # 2. Wrap it in a Gradio interface
